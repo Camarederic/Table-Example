@@ -145,3 +145,48 @@ tr:hover {
 .theme-toggle:hover {
   color: var(--text-color);
 }
+
+@media (max-width: 1000px) {
+  body {
+    overflow: auto;
+    align-items: flex-start;
+    padding-top: 50px;
+  }
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    display: none;
+  }
+
+  tr:nth-child(even) {
+    background-color: var(--even-row-bh);
+  }
+
+  tr:nth-child(even):hover {
+    background-color: var(--table-hover-bg);
+  }
+
+  td {
+    position: relative;
+    padding-left: 100px;
+    text-align: right;
+  }
+
+  td:not(:last-of-type) {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    font-weight: bold;
+  }
+}
